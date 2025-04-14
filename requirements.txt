@@ -1,2 +1,8 @@
 streamlit
 joblib
+pandas
+numpy
+plotly
+requests
+streamlit-option-menu
+
