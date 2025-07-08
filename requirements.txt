@@ -5,4 +5,7 @@ numpy
 plotly
 requests
 streamlit-option-menu
+xgboost
+scikit-learn
+
 
