@@ -55,14 +55,14 @@ def fetch_weather_data():
 
 # ----------------- Models -------------------
 def s_pred(sol_input):
-    model = joblib.load('/Users/gauravgahlot/Desktop/Major Project/solar_power_model.sav')
+    model = joblib.load('solar_power_model.sav')
     df = pd.DataFrame([sol_input])
     df.rename(columns={"Temperature":"temperature","Humidity":"humidity","Pressure":"surface_pressure","Altitude":"altitude"}, inplace=True)
     df = df[['temperature', 'humidity', 'surface_pressure', 'altitude']].apply(pd.to_numeric, errors='coerce').fillna(0)
     return model.predict(df)[0]
 
 def predict(input_data):
-    model = joblib.load('/Users/gauravgahlot/Desktop/Major Project/xgboost_rainfall_model.sav')
+    model = joblib.load('xgboost_rainfall_model.sav')
     df = pd.DataFrame([input_data])
     df.rename(columns={"Wind Speed": "Wind_Speed", "Cloud Cover": "Cloud_Cover"}, inplace=True)
     df = df[['Temperature', 'Humidity', 'Wind_Speed', 'Cloud_Cover', 'Pressure']].apply(pd.to_numeric, errors='coerce').fillna(0)
